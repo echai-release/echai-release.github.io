@@ -1807,17 +1807,19 @@ textarea.w-select {
   top: 0;
   left: 0;
 }
+
 .mainLogo{
-  height: 105px;
+  height: 60px;
   width: auto;
   position: relative;
-  top:-0.5px;
+  top: -1px;
 }
 
 .mainLogo-footer{
   position: relative;
-  left: -45px;
-  top: -30px;
+  left: -9px;
+  top: -19px;
+  width: 300px;
 }
 
 .menu-list-ul{
@@ -1887,13 +1889,58 @@ textarea.w-select {
   list-style-type: none;
 }
 
+.markIcon{
+  height: 27px;
+  width: auto;
+  padding: 1px;
+}
+
+
+.heading-card {
+  font-family: Clashgrotesk, sans-serif;
+  color: #1d1d1d;
+  letter-spacing: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.subheading-card {
+  font-family: Clashgrotesk, sans-serif;
+  color: #1d1d1d;
+  letter-spacing: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.cardWrap{
+  padding: 50px 25px;
+  border-radius: 24px;
+}
+
+.leftIcon{
+  position: relative;
+  right: -5px;
+}
+
+.textLeft{
+  text-align: left !important;
+  display: contents !important;
+}
+
 /* Media Query for responsive */
 @media (max-width: 768px) {
   .mainLogo {
-      height: 70px;
-      width: auto;
-      position: relative;
-      top: -0.5px;
+    height: 56px;
+    width: auto;
+    position: relative;
+    top: 0px;
+    left: 5px;
   }
 
   .menu-list-ul {
@@ -1904,8 +1951,135 @@ textarea.w-select {
   .nav-menu{
     margin-top: -5px !important;
   }
+}
 
-  .mainLogo-footer{
-    left: 0;
-  }
+:root,
+article {
+  margin: 0 !important;
+  padding: 0 !important;
+  --primary: #63e380 !important;
+  --primary-hover: #56c36e !important;
+  --contrast: #e9eaea;
+  --easing1: cubic-bezier(0.75, 0.05, 0.915, 0.335);
+}
+
+:root *,
+article * {
+  transition: 0.5s all cubic-bezier(0.11, 0.945, 0.565, 0.97) 0s;
+}
+
+
+.card {
+   font-family: Clashgrotesk, sans-serif;
+  width: 400px;
+  position: relative;
+  transition: 0.5s all cubic-bezier(0.11, 0.945, 0.565, 0.97) 0s;
+  cursor: pointer;
+}
+.card:hover img {
+  transform-origin: center bottom;
+  transform: perspective(1000px) rotateX(-10deg) translateY(-5px);
+}
+.card .card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.card .card-bg {
+  background-color: #fafafa;
+  border-radius: 20px;
+  inset: 5rem 0 1.6rem 0;
+  position: absolute;
+  z-index: 0;
+}
+.card img {
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0px 20px 30px -20px #11191f;
+  margin: 0 auto;
+  transition: 0.5s max-width var(--easing1) 0s, 0.5s all ease-in-out 0s;
+  cursor: pointer;
+}
+
+.card .name {
+  font-family: Clashgrotesk, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-weight: 500;
+  text-align: center;
+  font-weight: 500;
+  color: #8847e8;
+  margin-bottom: 12px;
+  margin-top: 15px;
+}
+
+.card span.lighter {
+  font-size: 19px;
+  color: #272727;
+  opacity: 1;
+  font-weight: 500;
+  font-family: Clashgrotesk, sans-serif;
+  margin-bottom: 20px;
+}
+
+.card span {
+  display: block;
+  font-size: 14px;
+  text-align: center;
+}
+
+.key-image-bg{
+  background: #955cea;
+  padding: 45px;
+}
+
+.card.collapsed img {
+  max-width: 125px;
+}
+
+.card.collapsed .card-bottom {
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s height var(--easing1) 0s;
+}
+
+.card.collapsed .card-bottom .fact {
+  opacity: 0;
+  transition: 0.3s opacity var(--easing1) 0s;
+}
+
+.card.collapsed .card-bottom .buttons {
+  opacity: 0;
+  transition: none;
+  transition: none;
+}
+
+.card:not(.collapsed) .card-bottom {
+  height: 120px;
+  overflow: hidden;
+  transition: 0.5s height var(--easing1) 0s;
+}
+.card:not(.collapsed) .card-bottom .fact {
+  transition: 0.3s opacity var(--easing1);
+}
+.card:not(.collapsed) .card-bottom .fact:nth-of-type(1) {
+  transition-delay: 0.5s;
+}
+.card:not(.collapsed) .card-bottom .fact:nth-of-type(2) {
+  transition-delay: 0.6s;
+}
+.card:not(.collapsed) .card-bottom .fact:nth-of-type(3) {
+  transition-delay: 0.7s;
+}
+.card:not(.collapsed) .card-bottom .buttons {
+  opacity: 1;
+  transition: 0.3s all var(--easing1) 1s;
+}
+.card:not(.collapsed) .card-bg {
+  inset: 5rem 0 0 0;
 }

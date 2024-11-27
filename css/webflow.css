@@ -1970,7 +1970,7 @@ article * {
 
 
 .card {
-   font-family: Clashgrotesk, sans-serif;
+  font-family: Clashgrotesk, sans-serif;
   width: 400px;
   position: relative;
   transition: 0.5s all cubic-bezier(0.11, 0.945, 0.565, 0.97) 0s;
@@ -2035,11 +2035,11 @@ article * {
 
 .key-image-bg{
   background: #955cea;
-  padding: 45px;
+  padding: 15px;
 }
 
 .card.collapsed img {
-  max-width: 125px;
+  max-width: 75px;
 }
 
 .card.collapsed .card-bottom {
@@ -2082,4 +2082,17 @@ article * {
 }
 .card:not(.collapsed) .card-bg {
   inset: 5rem 0 0 0;
+}
+
+
+.key-section-pd{
+  padding: 140px 30px 60px !important;
+}
+
+
+@media (max-width: 500px) {
+  .card {
+      font-family: Clashgrotesk, sans-serif;
+      width: 370px;
+  }
 }

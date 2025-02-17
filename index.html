@@ -13,6 +13,37 @@
   <link href="images/webclip.png" rel="apple-touch-icon">
 </head>
 <body>
+  <!-- ... -->
+  <script src="https://backend.enterprisechai.net/chatbot/copilot/index.js"></script>
+  <script>
+    window.addEventListener("chainlit-call-fn", (e) => {
+      const { name, args, callback } = e.detail;
+      callback("You sent: " + args.msg);
+    });
+  </script>
+  <script>
+    window.mountChainlitWidget({
+      chainlitServer: "https://backend.enterprisechai.net/chatbot",
+      accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiMTkiLCJtZXRhZGF0YSI6e30sImV4cCI6MTc0MTA3NTgxMH0.vTNGj_NuRh4V7-MKEEpdI-C6SMfDlkiX-KCKc3EOj0I",
+      theme: "light"       
+    });
+    function observeAndHideWatermark() {
+        const widget = document.querySelector("#chainlit-copilot");
+  
+        if (widget && widget.shadowRoot) {
+          const observer = new MutationObserver(() => {
+            const watermark = widget.shadowRoot.querySelector("a.watermark");
+            if (watermark) {
+              watermark.style.display = "none";
+            }
+          });
+  
+          observer.observe(widget.shadowRoot, { childList: true, subtree: true });
+        }
+      }
+  
+    observeAndHideWatermark();
+  </script>
   <div class="navigation">
     <div class="header">
       <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">

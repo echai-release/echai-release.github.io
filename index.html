@@ -32,9 +32,8 @@
 
       function observeAndHideWatermark() {
         const widget = document.querySelector("#chainlit-copilot");
-        console.log(widget);
+        widget.style.setProperty("z-index", "2147483647", "important");
         const shadowRoot = widget.shadowRoot;
-        console.log(shadowRoot);
         const shadowObserver = new MutationObserver((mutations, observer) => {
           // Disconnect the observer temporarily to prevent recursive calls.
           observer.disconnect();

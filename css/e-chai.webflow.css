@@ -1503,6 +1503,8 @@ h4 {
 
 .navbar {
   background-color: #0000;
+  margin-top: 0; /* Ensure no extra margin above the navbar */
+  padding-top: 0; /* Ensure no extra padding above the navbar */
 }
 
 .dropdown-item-wrapper {
@@ -1606,6 +1608,8 @@ h4 {
 }
 
 .header {
+  margin-top: 0; /* Remove any unnecessary margin above the header */
+  padding-top: 0; /* Remove any unnecessary padding above the header */
   padding: 24px 30px;
 }
 
@@ -5288,4 +5292,9 @@ h4 {
   font-weight: 500;
   font-style: italic;
   font-display: swap;
+}
+.hero-image {
+  max-width: 400px;
+  margin: 20px auto;
+  display: block;
 }

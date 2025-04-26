@@ -10,8 +10,22 @@
   <link href="css/e-chai.webflow.css" rel="stylesheet" type="text/css">
   <link rel="icon" href="images/faviconTheme.ico" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
+  <script src="https://backend.enterprisechai.com/chatbot/public/build/copilot/index.js" defer></script>
 </head>
-<body class="body">
+<body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const testConfig = { 
+          EChaiServer: 'https://backend.enterprisechai.com/chatbot',
+          accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiMTA2IiwibWV0YWRhdGEiOnt9LCJleHAiOjE3NzI3Mzc2NzF9.4ufQQ1DdWom5zJU9ol42iOdTEazIGzqCjg4v-31aXZA',
+          theme: 'light',
+          aiMessageIconHoverText: 'Ask EChai',
+          aiMessageIconUrl: 'https://backend.enterprisechai.com/chatbot/avatars/Enterprise%20Chai%20Assistant',
+      }; 
+      window.mountEChaiWidget(testConfig);
+    });
+  </script>
+
   <!-- Header (copied from index.html) -->
   <div class="navigation">
     <div class="header">
